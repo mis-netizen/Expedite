@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EXPEDITE Logistics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Cambria, serif; margin:0; padding:0; background:#f7f7f7; color:#222; }
+        header {
+            background: #fff;
+            padding: 24px 32px 24px 32px;
+            box-shadow: 0 0 8px #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        img.logo {
+            max-width: 220px;
+            margin-bottom: 0;
+            margin-right: 0;
+            display: block;
+        }
+        nav { background: #e0282e; font-family: Cambria, serif; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; }
+        nav li { position: relative; }
+        nav a, nav button {
+            color: #fff; background: #e0282e; border: none; padding: 16px 18px; font-weight: 600;
+            font-family: Cambria, serif; font-size: 14px; text-decoration: none; cursor: pointer; transition: background 0.3s;
+        }
+        nav a:hover, nav button:hover { background: #b91c1c; }
+        nav ul ul {
+            display: none; position: absolute; left: 0; top: 100%; background: #e0282e; min-width: 220px; z-index: 9999;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08); flex-direction: column; margin: 0;
+            border-radius: 0 0 8px 8px; overflow: hidden;
+        }
+        nav ul li:focus-within > ul, nav ul li:hover > ul, nav ul li.show > ul {
+            display: flex;
+        }
+        nav ul ul li { width: 100%; }
+        nav ul ul a, nav ul ul button {
+            padding: 12px 18px;
+            color: #fff;
+            background: #e0282e;
+            font-family: Cambria, serif;
+            border: none;
+            text-align: left;
+            text-decoration: none;
+            display: block;
+            font-size: 12px;          /* Sub menu font size 12px */
+            cursor: pointer;
+        }
+        nav ul ul a:hover, nav ul ul button:hover { background: #b91c1c; }
+        .hero { background: #f8f9fa; padding: 40px 0; text-align: center; }
+        .hero h1 { color: #e0282e; font-size: 2.5em; margin-bottom: 10px; font-family: Cambria, serif; }
+        .hero p { font-size: 1.2em; margin-bottom: 22px;}
+        .hero .quote-btn {
+            background: #fd7e14; color: #fff; border: none; padding: 14px 32px; border-radius: 30px;
+            font-size: 1em; font-family: Cambria, serif; font-weight: 600; cursor: pointer;
+        }
+        .section { max-width: 900px; margin: 40px auto; background: #fff; padding: 32px 24px;
+            border-radius: 16px; box-shadow: 0 0 20px #ccd; font-family: Cambria, serif;}
+        .section h2 { color: #e0282e; margin-bottom: 18px;}
+        .services-list, .industries-list { list-style: none; padding: 0;}
+        .services-list li::before { content:"🚀 "; }
+        .industries-list li::before { content:"✔️ "; }
+        footer { background: #e0282e; color: #fff; text-align: center; padding: 12px 0; margin-top: 40px;}
+        @media (max-width: 1000px) {
+          header { flex-direction: column; align-items: flex-start; }
+          img.logo { margin-bottom: 10px; }
+          nav ul { flex-wrap: wrap; }
+        }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll("nav li");
+        menuItems.forEach(item => {
+          item.addEventListener("click", function (ev) {
+            ev.stopPropagation();
+            menuItems.forEach(i => { if(i!==item) i.classList.remove("show"); });
+            item.classList.toggle("show");
+          });
+        });
+        document.body.addEventListener("click", function () {
+          menuItems.forEach(i => i.classList.remove("show"));
+        });
+      });
+    </script>
+</head>
+<body>
+    <header>
+      <img src="https://expedite-world.com/assets/images/logo/logo.png" alt="Expedite Logistics Logo" class="logo">
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <button>Home</button>
+        </li>
+        <li>
+          <button>About Us</button>
+          <ul>
+            <li><a href="#about">Who We Are</a></li>
+            <li><a href="#about">Vision & Mission</a></li>
+            <li><a href="#about">Leadership / Team</a></li>
+            <li><a href="#about">Company Timeline</a></li>
+          </ul>
+        </li>
+        <li>
+          <button>Services</button>
+          <ul>
+            <li><a href="#services">Expedite Delivery</a></li>
+            <li><a href="#services">Air Freight</a></li>
+            <li><a href="#services">Sea Freight</a></li>
+            <li><a href="#services">Road Transport</a></li>
+            <li><a href="#services">Warehousing</a></li>
+            <li><a href="#services">Supply Chain</a></li>
+            <li><a href="#services">Customs Clearance</a></li>
+          </ul>
+        </li>
+        <li>
+          <button>Industries Served</button>
+          <ul>
+            <li><a href="#industries">E-commerce</a></li>
+            <li><a href="#industries">Automotive</a></li>
+            <li><a href="#industries">Pharma</a></li>
+            <li><a href="#industries">Electronics</a></li>
+            <li><a href="#industries">FMCG</a></li>
+          </ul>
+        </li>
+        <li>
+          <button>Track Shipment</button>
+        </li>
+        <li>
+          <button>Request a Quote</button>
+        </li>
+        <li>
+          <button>Coverage</button>
+        </li>
+        <li>
+          <button>Contact Us</button>
+        </li>
+        <li>
+          <button>Careers</button>
+          <ul>
+            <li><a href="#careers-form">Job Openings / Current Vacancies</a></li>
+            <li><a href="#careers-benefits">Benefits & Perks</a></li>
+            <li><a href="#careers-internships">Internships & Training</a></li>
+            <li><a href="#careers-stories">Employee Stories / Testimonials</a></li>
+            <li><a href="#careers-contact">Contact / HR Enquiries</a></li>
+          </ul>
+        </li>
+        <li>
+          <button>Blog / News</button>
+        </li>
+        <li>
+          <button>Client Login</button>
+        </li>
+      </ul>
+    </nav>
+    <section class="hero" id="home">
+        <h1>Fast. Reliable. On-Time Delivery.</h1>
+        <p>Your trusted logistics partner for Air, Road, and Express Deliveries.</p>
+        <button class="quote-btn" onclick="location.href='#quote'">Get Instant Delivery Quote</button>
+    </section>
+    <section class="section" id="services">
+        <h2>Services Overview</h2>
+        <ul class="services-list">
+            <li>Expedite Delivery (core)</li>
+            <li>Air Freight</li>
+            <li>Sea Freight</li>
+            <li>Road Transport</li>
+            <li>Warehousing & Distribution</li>
+            <li>Supply Chain Management</li>
+            <li>Customs Clearance</li>
+        </ul>
+        <p><a href="#quote">Request a Quote</a></p>
+    </section>
+    <section class="section" id="industries">
+        <h2>Industries Served</h2>
+        <ul class="industries-list">
+            <li>E-commerce</li>
+            <li>Automotive</li>
+            <li>Pharma</li>
+            <li>Electronics</li>
+            <li>FMCG</li>
+        </ul>
+    </section>
+    <section class="section" id="about">
+        <h2>About Us</h2>
+        <p>
+            <strong>Who We Are:</strong> We expedite your logistics.<br>
+            <strong>Vision & Mission:</strong> Fast, safe, and dependable logistics for all.<br>
+            <strong>Company Timeline:</strong> Growing rapidly since our inception!
+        </p>
+    </section>
+    <!-- Embedded Google Form for Careers Job Application -->
+    <section class="section" id="careers-form">
+        <h2>Apply for a Job</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfl-K4eo0h7Ep9ZnC1liWVnAYxt4C1kA_RV3ntwr7TFwOf-aA/viewform?embedded=true" 
+            width="640" height="1300" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </section>
+    <footer>
+        &copy; 2025 Expedite Logistics. All rights reserved.
+    </footer>
+</body>
+</html>
